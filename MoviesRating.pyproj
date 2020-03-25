@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>MoviesRating</Name>
+    <RootNamespace>MoviesRating</RootNamespace>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
+    <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>8a7c36c4-5096-4192-936b-d3befa866764</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>MoviesRating.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\crud\admin.py" />
+    <Compile Include="app\crud\apps.py" />
+    <Compile Include="app\crud\models.py" />
+    <Compile Include="app\crud\tests.py" />
+    <Compile Include="app\crud\views.py" />
+    <Compile Include="app\crud\__init__.py" />
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="MovieCRUD\admin.py" />
+    <Compile Include="MovieCRUD\apps.py" />
+    <Compile Include="MovieCRUD\migrations\__init__.py" />
+    <Compile Include="MovieCRUD\models.py" />
+    <Compile Include="MovieCRUD\tests.py" />
+    <Compile Include="MovieCRUD\views.py" />
+    <Compile Include="MovieCRUD\__init__.py" />
+    <Compile Include="MoviesRating\__init__.py" />
+    <Compile Include="MoviesRating\settings.py" />
+    <Compile Include="MoviesRating\urls.py" />
+    <Compile Include="MoviesRating\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\crud\" />
+    <Folder Include="app\crud\migrations\" />
+    <Folder Include="app\crud\templates\" />
+    <Folder Include="app\crud\templates\crud\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\css\" />
+    <Folder Include="app\static\app\css\fonts\" />
+    <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\static\css\" />
+    <Folder Include="app\static\css\fonts\" />
+    <Folder Include="app\static\fonts\" />
+    <Folder Include="app\static\images\" />
+    <Folder Include="app\static\images\nivo\" />
+    <Folder Include="app\static\posters\" />
+    <Folder Include="app\static\images\uploads\" />
+    <Folder Include="app\static\js\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="MovieCRUD\" />
+    <Folder Include="MovieCRUD\migrations\" />
+    <Folder Include="MovieCRUD\templates\" />
+    <Folder Include="MovieCRUD\templates\MovieCRUD\" />
+    <Folder Include="MoviesRating\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\crud\templates\crud\index.html" />
+    <Content Include="app\static\app\css\ajax-loader.html" />
+    <Content Include="app\static\app\css\fonts\slick-2.html" />
+    <Content Include="app\static\app\css\fonts\slick-3.html" />
+    <Content Include="app\static\app\css\fonts\slick-4.html" />
+    <Content Include="app\static\app\css\fonts\slick.html" />
+    <Content Include="app\static\app\css\fonts\slickd41d.html" />
+    <Content Include="app\static\app\css\plugins.css" />
+    <Content Include="app\static\app\css\style.css" />
+    <Content Include="app\static\css\ajax-loader.html" />
+    <Content Include="app\static\css\fonts\slick-2.html" />
+    <Content Include="app\static\css\fonts\slick-3.html" />
+    <Content Include="app\static\css\fonts\slick-4.html" />
+    <Content Include="app\static\css\fonts\slick.html" />
+    <Content Include="app\static\css\fonts\slickd41d.html" />
+    <Content Include="app\static\css\plugins.css" />
+    <Content Include="app\static\css\style.css" />
+    <Content Include="app\static\fonts\fontawesome-webfont93e3.eot" />
+    <Content Include="app\static\fonts\fontawesome-webfont93e3.svg" />
+    <Content Include="app\static\fonts\fontawesome-webfont93e3.ttf" />
+    <Content Include="app\static\fonts\fontawesome-webfont93e3.woff" />
+    <Content Include="app\static\fonts\fontawesome-webfont93e3.woff2" />
+    <Content Include="app\static\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="app\static\images\blank.html" />
+    <Content Include="app\static\images\errImg.png" />
+    <Content Include="app\static\images\fancybox_loading%402x.gif" />
+    <Content Include="app\static\images\fancybox_loading.gif" />
+    <Content Include="app\static\images\fancybox_overlay.png" />
+    <Content Include="app\static\images\fancybox_sprite%402x.png" />
+    <Content Include="app\static\images\fancybox_sprite.png" />
+    <Content Include="app\static\images\favicon.ico" />
+    <Content Include="app\static\images\logo1.png" />
+    <Content Include="app\static\images\logo2.png" />
+    <Content Include="app\static\images\nivo\close%402x.png" />
+    <Content Include="app\static\images\nivo\close.png" />
+    <Content Include="app\static\images\nivo\loading%402x.gif" />
+    <Content Include="app\static\images\nivo\loading.gif" />
+    <Content Include="app\static\images\nivo\next%402x.png" />
+    <Content Include="app\static\images\nivo\next.png" />
+    <Content Include="app\static\images\nivo\prev%402x.png" />
+    <Content Include="app\static\images\nivo\prev.png" />
+    <Content Include="app\static\posters\MV5BMjI1NTk0NTc1OV5BMl5BanBnXkFtZTgwNTMwMTE4NDM%40._V1_SY500_CR0,0,281,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BMTg1MTY2MjYzNV5BMl5BanBnXkFtZTgwMTc4NTMwNDI%40._V1_SY500_CR0,0,337,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BMTg5NjUyMzAyOV5BMl5BanBnXkFtZTgwMTU4Njk2NDM%40._V1_SY500_CR0,0,337,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BMTUzMjcwMDExOV5BMl5BanBnXkFtZTgwMjU4Njk2NDM%40._V1_SY377_CR0,0,254,377_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BMTYwMTU5MzY4NF5BMl5BanBnXkFtZTgwNTY2NTkxNDM%40._V1_SY500_CR0,0,337,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BMzU3ODQ3MzQ5Nl5BMl5BanBnXkFtZTgwMDQwMDIzNDM%40._V1_SY500_CR0,0,338,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BNjZiNzgzNjUtOWE0Ni00MWFmLTliZDEtNWRkMzc5ZTA2MWM1XkEyXkFqcGdeQXVyNDExMzMxNjE%40._V1_SY500_CR0,0,337,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BYTc0MjI4YTktY2NkYi00YzgwLWIxNDItYWIyNjAwMWNlMGUzXkEyXkFqcGdeQXVyNDY2MjcyOTQ%40._V1_SY500_CR0,0,337,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BYThiMjg4ZDAtNjk5ZS00ZTUxLThmM2ItMGI0ZTE1NjRhNWNmXkEyXkFqcGdeQXVyNTQ3MjE4NTU%40._V1_SY500_CR0,0,334,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BYWMxYWVjNzAtMTY0YS00YWQyLWExMGItMjUxODkwYzQyNzMwXkEyXkFqcGdeQXVyMjMxOTE0ODA%40._V1_SY500_CR0,0,328,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BZDM0OTZlOWQtZGU0My00MmIxLTk0N2ItMjU3OGY0ODRlODYxXkEyXkFqcGdeQXVyNTQ0NjIwNDU%40._V1_SY500_CR0,0,353,500_AL_.jpg" />
+    <Content Include="app\static\posters\MV5BZDRkZGUxZmEtZDdiZC00NGJmLWFiODAtN2RiMzY3ODhjNTNmXkEyXkFqcGdeQXVyMTg5MDEyNw%40%40._V1_SY500_CR0,0,341,500_AL_.jpg" />
+    <Content Include="app\static\images\uploads\ads1.png" />
+    <Content Include="app\static\images\uploads\ads2.png" />
+    <Content Include="app\static\images\uploads\author.png" />
+    <Content Include="app\static\images\uploads\author2.png" />
+    <Content Include="app\static\images\uploads\author3.png" />
+    <Content Include="app\static\images\uploads\author4.png" />
+    <Content Include="app\static\images\uploads\ava1.jpg" />
+    <Content Include="app\static\images\uploads\ava2.jpg" />
+    <Content Include="app\static\images\uploads\ava3.jpg" />
+    <Content Include="app\static\images\uploads\ava4.jpg" />
+    <Content Include="app\static\images\uploads\blog-detail.jpg" />
+    <Content Include="app\static\images\uploads\blog-detail2.jpg" />
+    <Content Include="app\static\images\uploads\blog-it1.jpg" />
+    <Content Include="app\static\images\uploads\blog-it2.jpg" />
+    <Content Include="app\static\images\uploads\blog26.jpg" />
+    <Content Include="app\static\images\uploads\blog27.jpg" />
+    <Content Include="app\static\images\uploads\blog29.jpg" />
+    <Content Include="app\static\images\uploads\bloglist-it1.jpg" />
+    <Content Include="app\static\images\uploads\bloglist-it2.jpg" />
+    <Content Include="app\static\images\uploads\bloglist-it3.jpg" />
+    <Content Include="app\static\images\uploads\bloglist-it4.jpg" />
+    <Content Include="app\static\images\uploads\bloglist-it5.jpg" />
+    <Content Include="app\static\images\uploads\bloglist-it6.jpg" />
+    <Content Include="app\static\images\uploads\blogv21.jpg" />
+    <Content Include="app\static\images\uploads\blogv22.jpg" />
+    <Content Include="app\static\images\uploads\blogv23.jpg" />
+    <Content Include="app\static\images\uploads\blogv24.jpg" />
+    <Content Include="app\static\images\uploads\blogv25.jpg" />
+    <Content Include="app\static\images\uploads\blogv29.jpg" />
+    <Content Include="app\static\images\uploads\cast1.jpg" />
+    <Content Include="app\static\images\uploads\cast2.jpg" />
+    <Content Include="app\static\images\uploads\cast3.jpg" />
+    <Content Include="app\static\images\uploads\cast4.jpg" />
+    <Content Include="app\static\images\uploads\cast5.jpg" />
+    <Content Include="app\static\images\uploads\cast6.jpg" />
+    <Content Include="app\static\images\uploads\cast7.jpg" />
+    <Content Include="app\static\images\uploads\cast9.jpg" />
+    <Content Include="app\static\images\uploads\ceb1.jpg" />
+    <Content Include="app\static\images\uploads\ceb2.jpg" />
+    <Content Include="app\static\images\uploads\ceb21.jpg" />
+    <Content Include="app\static\images\uploads\ceb22.jpg" />
+    <Content Include="app\static\images\uploads\ceb23.jpg" />
+    <Content Include="app\static\images\uploads\ceb24.jpg" />
+    <Content Include="app\static\images\uploads\ceb25.jpg" />
+    <Content Include="app\static\images\uploads\ceb26.jpg" />
+    <Content Include="app\static\images\uploads\ceb27.jpg" />
+    <Content Include="app\static\images\uploads\ceb28.jpg" />
+    <Content Include="app\static\images\uploads\ceb29.jpg" />
+    <Content Include="app\static\images\uploads\ceb3.jpg" />
+    <Content Include="app\static\images\uploads\ceb4.jpg" />
+    <Content Include="app\static\images\uploads\ceb5.jpg" />
+    <Content Include="app\static\images\uploads\ceb6.jpg" />
+    <Content Include="app\static\images\uploads\ceb7.jpg" />
+    <Content Include="app\static\images\uploads\ceb8.jpg" />
+    <Content Include="app\static\images\uploads\ceb9.jpg" />
+    <Content Include="app\static\images\uploads\ceblist1.jpg" />
+    <Content Include="app\static\images\uploads\ceblist2.jpg" />
+    <Content Include="app\static\images\uploads\ceblist3.jpg" />
+    <Content Include="app\static\images\uploads\ceblist4.jpg" />
+    <Content Include="app\static\images\uploads\ceblist5.jpg" />
+    <Content Include="app\static\images\uploads\ceblist6.jpg" />
+    <Content Include="app\static\images\uploads\ceblist7.jpg" />
+    <Content Include="app\static\images\uploads\ceblist8.jpg" />
+    <Content Include="app\static\images\uploads\cebsingle2.png" />
+    <Content Include="app\static\images\uploads\celeb-hero-single.jpg" />
+    <Content Include="app\static\images\uploads\cm-img.png" />
+    <Content Include="app\static\images\uploads\drop-icon.png" />
+    <Content Include="app\static\images\uploads\err-img.png" />
+    <Content Include="app\static\images\uploads\error-bg.jpg" />
+    <Content Include="app\static\images\uploads\film1.jpg" />
+    <Content Include="app\static\images\uploads\film2.jpg" />
+    <Content Include="app\static\images\uploads\film3.jpg" />
+    <Content Include="app\static\images\uploads\film4.jpg" />
+    <Content Include="app\static\images\uploads\film5.jpg" />
+    <Content Include="app\static\images\uploads\film6.jpg" />
+    <Content Include="app\static\images\uploads\film7.jpg" />
+    <Content Include="app\static\images\uploads\film8.jpg" />
+    <Content Include="app\static\images\uploads\ft-bg.jpg" />
+    <Content Include="app\static\images\uploads\hero-bg.jpg" />
+    <Content Include="app\static\images\uploads\image1-1.jpg" />
+    <Content Include="app\static\images\uploads\image1.jpg" />
+    <Content Include="app\static\images\uploads\image10.jpg" />
+    <Content Include="app\static\images\uploads\image101.jpg" />
+    <Content Include="app\static\images\uploads\image11.jpg" />
+    <Content Include="app\static\images\uploads\image111.jpg" />
+    <Content Include="app\static\images\uploads\image12.jpg" />
+    <Content Include="app\static\images\uploads\image121.jpg" />
+    <Content Include="app\static\images\uploads\image13.jpg" />
+    <Content Include="app\static\images\uploads\image131.jpg" />
+    <Content Include="app\static\images\uploads\image14.jpg" />
+    <Content Include="app\static\images\uploads\image141.jpg" />
+    <Content Include="app\static\images\uploads\image15.jpg" />
+    <Content Include="app\static\images\uploads\image151.jpg" />
+    <Content Include="app\static\images\uploads\image16.jpg" />
+    <Content Include="app\static\images\uploads\image161.jpg" />
+    <Content Include="app\static\images\uploads\image17.jpg" />
+    <Content Include="app\static\images\uploads\image171.jpg" />
+    <Content Include="app\static\images\uploads\image18.jpg" />
+    <Content Include="app\static\images\uploads\image181.jpg" />
+    <Content Include="app\static\images\uploads\image19.jpg" />
+    <Content Include="app\static\images\uploads\image191.jpg" />
+    <Content Include="app\static\images\uploads\image2-1.jpg" />
+    <Content Include="app\static\images\uploads\image2.jpg" />
+    <Content Include="app\static\images\uploads\image20.jpg" />
+    <Content Include="app\static\images\uploads\image201.jpg" />
+    <Content Include="app\static\images\uploads\image21.jpg" />
+    <Content Include="app\static\images\uploads\image211.jpg" />
+    <Content Include="app\static\images\uploads\image3.jpg" />
+    <Content Include="app\static\images\uploads\image31.jpg" />
+    <Content Include="app\static\images\uploads\image4.jpg" />
+    <Content Include="app\static\images\uploads\image41.jpg" />
+    <Content Include="app\static\images\uploads\image5.jpg" />
+    <Content Include="app\static\images\uploads\image51.jpg" />
+    <Content Include="app\static\images\uploads\image6.jpg" />
+    <Content Include="app\static\images\uploads\image61.jpg" />
+    <Content Include="app\static\images\uploads\image7.jpg" />
+    <Content Include="app\static\images\uploads\image71.jpg" />
+    <Content Include="app\static\images\uploads\image8.jpg" />
+    <Content Include="app\static\images\uploads\image81.jpg" />
+    <Content Include="app\static\images\uploads\image9.jpg" />
+    <Content Include="app\static\images\uploads\image91.jpg" />
+    <Content Include="app\static\images\uploads\landing-dark-version.png" />
+    <Content Include="app\static\images\uploads\landing-light-version.png" />
+    <Content Include="app\static\images\uploads\movie-single.jpg" />
+    <Content Include="app\static\images\uploads\mv-it1.jpg" />
+    <Content Include="app\static\images\uploads\mv-it10.jpg" />
+    <Content Include="app\static\images\uploads\mv-it11.jpg" />
+    <Content Include="app\static\images\uploads\mv-it12.jpg" />
+    <Content Include="app\static\images\uploads\mv-it2.jpg" />
+    <Content Include="app\static\images\uploads\mv-it3.jpg" />
+    <Content Include="app\static\images\uploads\mv-it4.jpg" />
+    <Content Include="app\static\images\uploads\mv-it5.jpg" />
+    <Content Include="app\static\images\uploads\mv-it6.jpg" />
+    <Content Include="app\static\images\uploads\mv-it7.jpg" />
+    <Content Include="app\static\images\uploads\mv-it8.jpg" />
+    <Content Include="app\static\images\uploads\mv-it9.jpg" />
+    <Content Include="app\static\images\uploads\mv-item1.jpg" />
+    <Content Include="app\static\images\uploads\mv-item10.jpg" />
+    <Content Include="app\static\images\uploads\mv-item11.jpg" />
+    <Content Include="app\static\images\uploads\mv-item12.jpg" />
+    <Content Include="app\static\images\uploads\mv-item2.jpg" />
+    <Content Include="app\static\images\uploads\mv-item3.jpg" />
+    <Content Include="app\static\images\uploads\mv-item4.jpg" />
+    <Content Include="app\static\images\uploads\mv-item5.jpg" />
+    <Content Include="app\static\images\uploads\mv-item6.jpg" />
+    <Content Include="app\static\images\uploads\mv-item7.jpg" />
+    <Content Include="app\static\images\uploads\mv-item8.jpg" />
+    <Content Include="app\static\images\uploads\mv-item9.jpg" />
+    <Content Include="app\static\images\uploads\mv1.jpg" />
+    <Content Include="app\static\images\uploads\mv2.jpg" />
+    <Content Include="app\static\images\uploads\mv3.jpg" />
+    <Content Include="app\static\images\uploads\mv4.jpg" />
+    <Content Include="app\static\images\uploads\mv5.jpg" />
+    <Content Include="app\static\images\uploads\play-vd.png" />
+    <Content Include="app\static\images\uploads\poster1.jpg" />
+    <Content Include="app\static\images\uploads\search-bg.png" />
+    <Content Include="app\static\images\uploads\search-bgsb.png" />
+    <Content Include="app\static\images\uploads\season.jpg" />
+    <Content Include="app\static\images\uploads\series-img.jpg" />
+    <Content Include="app\static\images\uploads\slider-bg.jpg" />
+    <Content Include="app\static\images\uploads\slider-bg2.jpg" />
+    <Content Include="app\static\images\uploads\slider1.jpg" />
+    <Content Include="app\static\images\uploads\slider2.jpg" />
+    <Content Include="app\static\images\uploads\slider3.jpg" />
+    <Content Include="app\static\images\uploads\slider4.jpg" />
+    <Content Include="app\static\images\uploads\sr-single.jpg" />
+    <Content Include="app\static\images\uploads\topsearch.png" />
+    <Content Include="app\static\images\uploads\trailer2.jpg" />
+    <Content Include="app\static\images\uploads\trailer3.png" />
+    <Content Include="app\static\images\uploads\trailer4.png" />
+    <Content Include="app\static\images\uploads\trailer5.jpg" />
+    <Content Include="app\static\images\uploads\trailer6.jpg" />
+    <Content Include="app\static\images\uploads\trailer7.jpg" />
+    <Content Include="app\static\images\uploads\user-hero-bg.jpg" />
+    <Content Include="app\static\images\uploads\user-img.png" />
+    <Content Include="app\static\images\uploads\userava1.jpg" />
+    <Content Include="app\static\images\uploads\userava2.jpg" />
+    <Content Include="app\static\images\uploads\userava3.jpg" />
+    <Content Include="app\static\images\uploads\userava4.jpg" />
+    <Content Include="app\static\images\uploads\userava5.jpg" />
+    <Content Include="app\static\images\uploads\vd-item1.jpg" />
+    <Content Include="app\static\images\uploads\vd-item2.jpg" />
+    <Content Include="app\static\images\uploads\vd-item3.jpg" />
+    <Content Include="app\static\images\uploads\vd-item4.jpg" />
+    <Content Include="app\static\js\custom.js" />
+    <Content Include="app\static\js\jquery.js" />
+    <Content Include="app\static\js\plugins.js" />
+    <Content Include="app\static\js\plugins2.js" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\moviegrid.html" />
+    <Content Include="app\templates\app\movielist.html" />
+    <Content Include="app\templates\app\moviesingle.html" />
+    <Content Include="app\templates\app\signup.html" />
+    <Content Include="app\templates\app\userprofile.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="MovieCRUD\templates\MovieCRUD\index.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

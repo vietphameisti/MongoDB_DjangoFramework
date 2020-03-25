@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7 no-js" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8 no-js" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en" class="no-js">
+{% load staticfiles %}
+{% load static %}
+<!-- movielist07:38-->
+<head>
+	<!-- Basic need -->
+	<title>EISTI Film review</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<link rel="profile" href="#">
+
+    <!--Google Font-->
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Dosis:400,700,500|Nunito:300,400,600' />
+	<!-- Mobile specific meta -->
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone-no">
+    
+    
+	<!-- CSS files -->
+	<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<!--preloading-->
+<div id="preloader">
+    <img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58">
+    <div id="status">
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<!--end of preloading-->
+<!--login form popup-->
+ <div class="login-wrapper" id="login-content">
+        <div class="login-content">
+            <a href="#" class="close">x</a>
+            <h3>Login</h3>
+            <form method="post" action="{% url 'loginpage' %}">
+                {% csrf_token %}
+                <div class="row">
+                    <label for="username">
+                        Username:
+                        <input type="text" name="username" id="username" placeholder="User name" required="required" />
+                    </label>
+                </div>
+                <div class="row">
+                    <label for="password">
+                        Password:
+                        <input type="password" name="password" id="password" placeholder="******" required="required"  />
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="remember">
+                        <div>
+                            <input type="checkbox" name="remember" value="Remember me"><span>Remember me</span>
+                        </div>
+                        <a href="#">Forget password ?</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+<!--end of login form popup-->
+
+
+<!-- BEGIN | Header -->
+<header class="ht-header">
+	<div class="container">
+		<nav class="navbar navbar-default navbar-custom">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header logo">
+				    <div class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					    <span class="sr-only">Toggle navigation</span>
+					    <div id="nav-icon1">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+				   </div>
+                    </div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav flex-child-menu menu-left">
+						<li class="hidden">
+							<a href="#page-top"></a>
+						</li>
+						<li class="dropdown first">
+                            <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" >
+                                Home <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu level1">
+								<li><a href="{% url 'home' %}">Home page</a></li>
+                                </ul>
+                            
+                        </li>
+						</ul>
+					 <ul class="nav navbar-nav flex-child-menu menu-right">  
+                         {% if user.is_authenticated %}
+                        <li ><a href="/profile/">{{ user }}</a></li>
+                        <li style="font-family: 'Dosis', sans-serif;font-size: 14px;color: #ffffff;font-weight: bold;
+                                  text-transform: uppercase;
+                                  border: none;
+                                  background-color: #dd003f;
+                                  height: 42px;
+                                  width: 50;
+                                  border-radius: 20px;
+                                  font-style: inherit;cursor: pointer;"><a href="{% url 'logout' %}" style="position: relative;display: block;line-height: 20px;font-style: inherit;color: #ffffff;padding: 11px 25px;">Logout</a></li>
+                        {% else %}
+                        <li class="loginLink"><a href="#">LOG In</a></li>
+                        <li style="font-family: 'Dosis', sans-serif;font-size: 14px;color: #ffffff;font-weight: bold;
+                                  text-transform: uppercase;
+                                  border: none;
+                                  background-color: #dd003f;
+                                  height: 42px;
+                                  width: 50;
+                                  border-radius: 20px;
+                                  font-style: inherit;cursor: pointer;" ><a href="{% url 'signup' %}" style="position: relative;display: block;line-height: 20px;font-style: inherit;color: #ffffff;padding: 11px 25px;">sign up</a></li>
+                        {% endif %}
+                    </ul>
+				</div>
+			<!-- /.navbar-collapse -->
+	    </nav>
+	    
+	    <!-- top search form -->
+	   <div class="top-search">               
+            <input type="text" name="topsearch" id="topsearch" placeholder="Search for a movie that you are looking for">
+        </div>
+	</div>
+</header>
+<!-- END | Header -->
+
+<div class="hero common-hero">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hero-ct">
+					<h1> movie search listing </h1>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="page-single movie_list">
+	<div class="container">
+		<div class="row ipad-width2">
+			<div class="col-md-8 col-sm-12 col-xs-12">
+				<div class="topbar-filter">
+					<p>Found <span>{{ movies|length }} movies</span> in total</p>
+				</div>
+                {% for movie in movies %}
+				<div class="movie-item-style-2">
+					<img src="{% get_static_prefix %}posters/{{ movie.poster }}" alt="">
+					<div class="mv-item-infor">
+						<h6><a href="moviesingle/{{ movie.id }}"> {{ movie.title }} <span>{{ movie.year }}</span></a></h6>
+						<p class="rate"><i class="ion-android-star"></i><span>{{ movie.imdbRating }}</span> /10</p>
+						<p class="describe"> {{ movie.storyline|truncatewords:30 }}</p>
+						<p class="run-time"> Run Time: {{ movie.duration }}    .     <span>Release: {{ movie.releaseDate }}</span></p>
+						
+						<p>Stars: {% for actor in movie.actors %}
+                                  <span> {{ actor.fullname }} </span>
+                                  {% endfor %}</p>
+					</div>
+				</div>
+				
+				{% empty %}
+                    Not found 
+                {% endfor %} 
+				
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="sidebar">
+					 <div class="searh-form">
+                            <h4 class="sb-title">Advance Search</h4>
+                            <form class="form-style-1" action="/search/" method="get">
+                                <div class="row">
+                                    <div class="col-md-12 form-it">
+                                        <label>Movie name</label>
+                                        <input name="title_search" type="text" placeholder="Enter keywords">
+                                    </div>
+                                   
+                                    <div class="col-md-12 form-it">
+                                        <label>Release Year</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input name="fromyear_search" type="text" placeholder="From">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input name="toyear_search" type="text" placeholder="To">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 ">
+                                        <input class="submit" type="submit" value="submit">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>   
+					
+					
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- footer section-->
+ <footer class="ht-footer">
+        <div class="container">
+            <div class="flex-parent-ft">
+                <div class="flex-child-ft item1">
+                    <p>
+                        EISTI Film review <br>
+                        No-SQL database project
+                    </p>
+                    <p>PHAM Quoc Viet</p>
+                </div>
+                <div class="flex-child-ft item5">
+				<div class="backtotop">
+                <p><a href="#" id="back-to-top">Back to top  <i class="ion-ios-arrow-thin-up"></i></a></p>
+            </div>
+			</div>
+                
+            </div>
+        </div>
+    </footer>
+<!-- end of footer section-->
+
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/plugins2.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+     <script>
+    document.getElementById('topsearch').addEventListener('keypress', function(event) {
+        if (event.keyCode == 13 || event.which == 13) {
+            event.preventDefault();
+            var inputVal = document.getElementById("topsearch").value; 
+            location.href = location.href + "topsearch/"+"?topsearch="+inputVal;
+        }
+    });
+</script>
+</body>
+
+<!-- movielist07:38-->
+</html>

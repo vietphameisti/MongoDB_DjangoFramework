@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7 no-js" lang="en-US">
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8 no-js" lang="en-US">
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en" class="no-js">
+{% load staticfiles %}
+{% load static %}
+<!-- moviesingle07:38-->
+<head>
+	<!-- Basic need -->
+	<title>EISTI Film review</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<link rel="profile" href="#">
+
+    <!--Google Font-->
+    <link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Dosis:400,700,500|Nunito:300,400,600' />
+	<!-- Mobile specific meta -->
+	<meta name=viewport content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone-no">
+
+   
+	<!-- CSS files -->
+	<link rel="stylesheet" href="{% static 'css/plugins.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <!--preloading-->
+    <div id="preloader">
+        <img class="logo" src="{% static 'images/logo1.png' %}" alt="" width="119" height="58">
+        <div id="status">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <!--end of preloading-->
+    <!--login form popup-->
+   <div class="login-wrapper" id="login-content">
+        <div class="login-content">
+            <a href="#" class="close">x</a>
+            <h3>Login</h3>
+            <form method="post" action="{% url 'loginpage' %}">
+                {% csrf_token %}
+                <div class="row">
+                    <label for="username">
+                        Username:
+                        <input type="text" name="username" id="username" placeholder="User name" required="required" />
+                    </label>
+                </div>
+                <div class="row">
+                    <label for="password">
+                        Password:
+                        <input type="password" name="password" id="password" placeholder="******" required="required"  />
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="remember">
+                        <div>
+                            <input type="checkbox" name="remember" value="Remember me"><span>Remember me</span>
+                        </div>
+                        <a href="#">Forget password ?</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+    <!--end of login form popup-->
+   
+    <!-- BEGIN | Header -->
+    <header class="ht-header">
+        <div class="container">
+            <nav class="navbar navbar-default navbar-custom">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header logo">
+                    <div class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <div id="nav-icon1">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse flex-parent" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav flex-child-menu menu-left">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="dropdown first">
+                            <a class="btn btn-default dropdown-toggle lv1" data-toggle="dropdown" >
+                                Home <i class="fa fa-angle-down" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu level1">
+								<li><a href="{% url 'home' %}">Home page</a></li>
+                                </ul>
+                            
+                        </li>
+                        
+                        
+                        
+                        
+                    </ul>
+                     <ul class="nav navbar-nav flex-child-menu menu-right">  
+                         {% if user.is_authenticated %}
+                        <li ><a href="/profile/">{{ user }}</a></li>
+                        <li style="font-family: 'Dosis', sans-serif;font-size: 14px;color: #ffffff;font-weight: bold;
+                                  text-transform: uppercase;
+                                  border: none;
+                                  background-color: #dd003f;
+                                  height: 42px;
+                                  width: 50;
+                                  border-radius: 20px;
+                                  font-style: inherit;cursor: pointer;"><a href="{% url 'logout' %}" style="position: relative;display: block;line-height: 20px;font-style: inherit;color: #ffffff;padding: 11px 25px;">Logout</a></li>
+                        {% else %}
+                        <li class="loginLink"><a href="#">LOG In</a></li>
+                        <li style="font-family: 'Dosis', sans-serif;font-size: 14px;color: #ffffff;font-weight: bold;
+                                  text-transform: uppercase;
+                                  border: none;
+                                  background-color: #dd003f;
+                                  height: 42px;
+                                  width: 50;
+                                  border-radius: 20px;
+                                  font-style: inherit;cursor: pointer;" ><a href="{% url 'signup' %}" style="position: relative;display: block;line-height: 20px;font-style: inherit;color: #ffffff;padding: 11px 25px;">sign up</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </nav>
+
+            <!-- top search form -->
+            <!-- top search form -->
+            <div class="top-search">               
+                <input type="text" name="topsearch" id="topsearch" placeholder="Search for a movie that you are looking for">                
+            </div>
+        </div>
+    </header>
+    <!-- END | Header -->
+
+    <div class="hero mv-single-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- <h1> movie listing - list</h1>
+                    <ul class="breadcumb">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li> <span class="ion-ios-arrow-right"></span> movie listing</li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for m in movie %}
+    <div class="page-single movie-single movie_single">
+        <div class="container">
+            <div class="row ipad-width2">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="movie-img sticky-sb">
+                        <img src="{% get_static_prefix %}posters/{{ m.poster }}" alt="">
+                        
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="movie-single-ct main-content">
+                        <!--tittle, year, rating section-->
+                        <h1 class="bd-hd">{{ m.title }} <span>{{ m.year }}</span></h1>
+
+                        <div class="movie-rate">
+                            <div class="rate">
+                                <i class="ion-android-star"></i>
+                                <p>
+                                    <span>{{ m.imdbRating }}</span> /10<br>
+                                    <span class="rv"> {{ m.ratings|length }} Ratings</span>
+                                </p>
+                            </div>
+                            
+                        </div>
+                        <div class="movie-tabs">
+                            <div class="tabs">
+                                <ul class="tab-links tabs-mv">
+                                    <li class="active"><a href="#overview">Overview</a></li>
+                                    <li><a href="#reviews"> Reviews</a></li>
+                                    <li><a href="#cast">  Cast & Crew </a></li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="overview" class="tab active">
+                                        <div class="row">
+                                            <div class="col-md-8 col-sm-12 col-xs-12">
+                                                <!-- storyline section -->
+                                                <p> {{ m.storyline }} </p>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div id="reviews" class="tab review">
+                                        <div class="row">
+                                            <div class="topbar-filter">
+                                                <p>Found <span>{{ m.contentRating|length }} reviews</span> in total</p>
+                                            </div>
+                                            <!-- review/comment section -->
+                                            {% for comment in m.contentRating %}
+                                            <div class="mv-user-review-item">
+                                                <p>{{ comment.content }} </p>
+                                            </div>
+                                            {% endfor %}
+
+                                            <div class="topbar-filter">
+
+                                                <div class="pagination2">
+                                                    <span>Page 1 of 6:</span>
+                                                    <a class="active" href="#">1</a>
+                                                    <a href="#">2</a>
+                                                    <a href="#">3</a>
+                                                    <a href="#">4</a>
+                                                    <a href="#">5</a>
+                                                    <a href="#">6</a>
+                                                    <a href="#"><i class="ion-arrow-right-b"></i></a>
+                                                </div>
+                                            </div>
+                                            
+                                        
+                                        </div>
+                                     <div class="comment-form">
+						<form action="/addComment/{{ m.id }}/" method="POST">
+                            {% csrf_token %}
+							<div class="row">
+								<div class="col-md-4">
+                                    <select class="form-control" name="ratingValue" id="ratingValue" style="font-family: 'Nunito', sans-serif;
+                                                                                    font-size: 12px;
+                                                                                    color: #abb7c4;
+                                                                                    font-weight: 300;
+                                                                                    text-transform: none;
+                                                                                    border: 1px solid #405266;
+                                                                                    -webkit-border-radius: 3px;
+                                                                                    -moz-border-radius: 3px;
+                                                                                    border-radius: 3px;
+                                                                                    background: none;
+                                                                                    margin-bottom: 20px;
+                                                                                    background: transparent;" >
+                                          <option>0</option>
+                                          <option>1</option>
+                                          <option>2</option>
+                                          <option>3</option>
+                                          <option>4</option>
+                                          <option>5</option>
+                                          <option>6</option>
+                                          <option>7</option>
+                                          <option>8</option>
+                                          <option>9</option>
+                                          <option selected >10</option>
+                                        </select>
+									
+								</div>
+
+								
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<textarea name="message" id="message" placeholder="Leave a comment" style="font-family: 'Nunito', sans-serif;
+                                                                                                font-size: 12px;
+                                                                                                color: #abb7c4;
+                                                                                                font-weight: 300;
+                                                                                                text-transform: none;
+                                                                                                border: 1px solid #405266;
+                                                                                                -webkit-border-radius: 3px;
+                                                                                                -moz-border-radius: 3px;
+                                                                                                border-radius: 3px;
+                                                                                                background: none;
+                                                                                                margin-bottom: 20px;
+                                                                                                height: 245px;
+                                                                                                padding: 15px;" ></textarea>
+								</div>
+							</div>
+							<input class="submit" type="submit" placeholder="submit" style="background-color: #dd003f;
+                                                                                                  padding: 0 35px;
+                                                                                                  height: 36px;
+                                                                                                  -webkit-border-radius: 25px;
+                                                                                                  -moz-border-radius: 25px;
+                                                                                                  border-radius: 25px;
+                                                                                                  font-family: 'Dosis', sans-serif;
+                                                                                                  font-size: 14px;
+                                                                                                  color: #ffffff;
+                                                                                                  font-weight: bold;
+                                                                                                  text-transform: uppercase;
+                                                                                                  border: none;">
+						</form>
+					</div>       
+                                    </div>
+                                    <div id="cast" class="tab">
+                                        <div class="row">
+                                           <!--cast & crew section-->
+                                            <div class="title-hd-sm">
+                                                <h4>Cast & Crew of {{ m.title }}</h4>
+                                            </div>
+                                            <div class="mvcast-item">
+                                                {% for actor in m.actors %}
+                                                <div class="cast-it">
+                                                    <div class="cast-left">
+                                                        <!-- cast&crew names -->
+                                                        <h3> {{ actor.fullname }} </h3>
+                                                    </div>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <!-- footer section-->
+     <footer class="ht-footer">
+        <div class="container">
+            <div class="flex-parent-ft">
+                <div class="flex-child-ft item1">
+                    <p>
+                        EISTI Film review <br>
+                        No-SQL database project
+                    </p>
+                    <p>PHAM Quoc Viet</p>
+                </div>
+                <div class="flex-child-ft item5">
+				<div class="backtotop">
+                <p><a href="#" id="back-to-top">Back to top  <i class="ion-ios-arrow-thin-up"></i></a></p>
+            </div>
+			</div>
+                
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer section-->
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/plugins2.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+<!-- moviesingle11:03-->
+</html>
