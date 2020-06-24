@@ -3,6 +3,6 @@
 user’s ratings and comments for films, movies using No-SQL Database.
 
 The requirements of the project are:
-<br>Web development using MVC architecture.
-<br>List of films, searching, CRUD functionalities movies, comments, user.
-<br>Using No-SQL Database.
+<br>_Web development using MVC architecture._
+<br>_List of films, searching, CRUD functionalities movies, comments, user._
+<br>_Using No-SQL Database._
